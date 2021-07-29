@@ -1,0 +1,14 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="rounded p-3 shadow" style="background-color: white;">
+        <h3>Agrega una película a tu <%= @list.name %> lista de películas</h3>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment, placeholder: 'Ingresa un comentario sobre la película' %>
+          <%= f.association :movie, prompt: 'Seleccionar una pelicula', input_html: { class: 'select2' } %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
