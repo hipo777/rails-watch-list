@@ -7,7 +7,7 @@
       <h1 style="margin: 10px 20px;">Ver todas las categorias:</h1>
       <div class="cards-box d-flex">
         <%@lists.each do |list| %>
-        <div class="card rounded shadow" >
+        <div class="card rounded shadow" style="background-image: url(<%= cl_image_path(list.photo.key, crop: :fill) %>); position: relative;">
           <h5 style="font-weight: bold;"><%= link_to list.name, list_path(list), class: "list-title" %></h5>
           <p style="position: absolute; right: 20px; bottom: 0px;"> <%= link_to "X", list_path(list), method: :delete, data: { confirm: "Delete this List?" }, class: "delete-button" %></p>
         </div>
